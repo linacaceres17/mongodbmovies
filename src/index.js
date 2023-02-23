@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const userRoute = require("./routes/user");
-
+const reviewerRoute = require("./routes/reviewer")
 
 
 // settings
@@ -11,8 +11,9 @@ const port = process.env.PORT || 9000;
 
 
 //middleware
-app.use(express.json())
+app.use(express.json());
 app.use("/api", userRoute);
+app.use("/api", reviewerRoute);
 
 // routes
 app.get("/", (req, res) => {

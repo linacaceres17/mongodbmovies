@@ -13,4 +13,12 @@ router.post("/director", (req, res) => {
     .catch((error) => res.json({message: error}))
 })
 
+// get all directors
+router.get("/director", (req, res) => {
+    directorSchema
+    .find()
+    .then((data) => res.json(data))
+    .catch((error) => res.json({ message: error }));
+});
+
 module.exports = router;

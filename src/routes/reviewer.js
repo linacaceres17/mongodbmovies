@@ -22,8 +22,12 @@ router.get("/reviewers", (req, res) => {
 
 // Delete a reviewer
 router.delete("/reviewers/:id", (req, res) => {
+    const { id } = req.params;
+    reviewerSchema
+      .remove({ rev_id: id })
+      .then((data) => res.json(data))
+      .catch((error) => res.json({ message: error }));
 });
-
 
 
 module.exports = router;

@@ -11,6 +11,7 @@ Content-Type: application/json
     "mov_rel_country": "uk"
 }
 
+//director
 ###
 POST http://localhost:9000/api/director HTTP/1.1
 Content-Type: application/json
@@ -21,4 +22,21 @@ Content-Type: application/json
     "dir_lname": "Hitchcock"
 }
 
+//reviewer
+###
+POST http://localhost:9000/api/reviewer/2 HTTP/1.1
+Content-Type: application/json
+{
+    "rev_id": 2,
+    "rev_name": "Righty Sock"
+},
 
+
+###
+DELETE http://localhost:9000/api/reviewer HTTP/1.1
+Content-Type: application/json
+
+{
+    "rev_id": 1,
+    "rev_name": "Righty Sock"
+}

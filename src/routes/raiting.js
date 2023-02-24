@@ -3,6 +3,8 @@ const ratingSchema = require ("../models/raiting");
 
 const router = express.Router();
 
+// Create a new rating
+
 router.post("/ratings", (req,res) => {
     const rating= ratingSchema(req.body);
     rating

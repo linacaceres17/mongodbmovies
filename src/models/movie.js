@@ -7,6 +7,7 @@ const movieSchema = mongoose.Schema({
   },
   mov_title: {
     type: String,
+    maxlength: 50,
     required: true
   },
   mov_year: {
@@ -19,10 +20,13 @@ const movieSchema = mongoose.Schema({
   },
   mov_lang: {
     type: String,
+    maxlength: 50,
     required: true
   },
+
   mov_rel_country: {
     type: String,
+    maxlength: 5,
     required: true
   }
 });

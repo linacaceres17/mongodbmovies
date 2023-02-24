@@ -24,7 +24,7 @@ router.get('/moviegenres', (req, res) => {
 router.get('/moviegenres/:id', (req, res) => {
     const { id } = req.params;
     moviegenres
-    .findById(id)
+    .findOne( { gen_id : id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }))
 });
@@ -32,9 +32,9 @@ router.get('/moviegenres/:id', (req, res) => {
 //  Update a moviegenres
 router.put('/moviegenres/:id', (req, res) => {
     const { id } = req.params;
-    const { gen_id, gen_title } = req.body;
+    const { gen_id, mov_id } = req.body;
     moviegenresSchema
-    .updateOne ({ _id: id }, { $set: { gen_id, gen_title } })
+    .updateOne ({ gen_id: id }, { $set: { gen_id, mov_id } })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }))
 });
@@ -43,7 +43,7 @@ router.put('/moviegenres/:id', (req, res) => {
 router.delete('/moviegenres/:id', (req, res) => {
     const { id } = req.params;
     moviegenresSchema
-    .remove({ _id: id})
+    .remove({ gen_id: id })
     .then((data) => res.json(data))
     .catch((error) => res.json({ message: error }))
 });

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 
-
-const movieDirectionSchema = mongoose.Schema({
+const moviedirectionSchema = mongoose.Schema({
     dir_id: {
         type: Number,
         required: true,
@@ -12,4 +11,4 @@ const movieDirectionSchema = mongoose.Schema({
         required: true,
     }
 })
-module.exports = mongoose.model("MovieDirection", movieDirectionSchema);
+module.exports = mongoose.model("MovieDirection", moviedirectionSchema);

@@ -3,7 +3,8 @@ const reviewerSchema = require ("../models/reviewer");
 
 const router = express.Router();
 
-//Create reviewer
+// Create reviewer
+
 router.post("/reviewers", (req, res) => {
     const reviewer= reviewerSchema(req.body);
     reviewer
@@ -13,6 +14,7 @@ router.post("/reviewers", (req, res) => {
 })
 
 // Get all reviewers
+
 router.get("/reviewers", (req, res) => {
     reviewerSchema
       .find()
@@ -21,6 +23,7 @@ router.get("/reviewers", (req, res) => {
 });
 
 // Delete a reviewer
+
 router.delete("/reviewers/:id", (req, res) => {
     const { id } = req.params;
     reviewerSchema
